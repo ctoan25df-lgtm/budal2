@@ -7,10 +7,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   applicationName: SITE.koreanName,
   title: {
-    default: "부달주소 관찰 기록 | 공개 채널·생활권·게시판",
+    default: "부달주소 | 부산달리기 최신 주소 확인 · bamdalin.com 바로가기",
     template: "%s | " + SITE.koreanName,
   },
   description: SITE.description,
+  keywords: [...SITE.keywords],
   robots: {
     index: true,
     follow: true,

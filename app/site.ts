@@ -7,13 +7,22 @@ export const SITE = {
     process.env.NEXT_PUBLIC_SITE_URL ??
     "https://budal-fieldnote-2026.brocpn.chatgpt.site",
   description:
-    "부달주소와 부산달리기 관련 공개 채널의 상충하는 주소 주장을 관찰하고, 부산·경남 생활권과 게시판 정보를 판단하는 기준을 제공하는 독립 편집 노트입니다.",
+    "부달주소 최신 확인 가이드. 부산달리기 공개 채널의 주소 주장을 관찰하고, 밤의달인(bamdalin.com) 바로가기와 부산·경남 생활권·게시판 읽기 기준을 제공합니다.",
+  keywords: [
+    "부달주소",
+    "부달 주소",
+    "부산달리기",
+    "부산달리기 주소",
+    "부달주소 최신",
+    "밤의달인",
+    "bamdalin.com",
+  ],
   reviewedAt: "2026-08-03",
   status: "재확인 필요",
   linktreeUrl: "https://linktr.ee/busandal",
   telegramUrl: "https://t.me/s/budalinfo",
   alternativeUrl:
-    "https://bamdalin.com/?utm_source=budal2&utm_medium=referral&utm_campaign=transparent_alternative",
+    "https://bamdalin.com/?utm_source=budal2&utm_medium=referral&utm_campaign=budal_address",
   email: "desk@budalfieldnote.kr",
 } as const;
 
@@ -34,6 +43,7 @@ export function pageMetadata(
   return {
     title,
     description,
+    keywords: [...SITE.keywords],
     alternates: { canonical: url },
     openGraph: {
       type: path === "/" ? "website" : "article",
@@ -47,7 +57,7 @@ export function pageMetadata(
           url: new URL("/og.png", SITE.url).toString(),
           width: 1200,
           height: 630,
-          alt: "BUDAL FIELDNOTE · 부달주소 관찰노트 · 공개 채널, 생활권, 게시판",
+          alt: "부달주소 관찰노트 · 부산달리기 주소 확인 · bamdalin.com 바로가기",
         },
       ],
     },
