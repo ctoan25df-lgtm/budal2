@@ -16,6 +16,7 @@
 - `npm run build`: run the native Next.js production build
 - `npm run start`: serve the native Next.js production build
 - `npm run worker:build`: adapt the completed Next.js build for Cloudflare
+- `npm run sites:package -- /tmp/site.tar.gz`: create the bundled Sites archive
 - `npm run lint`: run ESLint
 - `npm test`: verify the rendered routes while the local server is running
 
