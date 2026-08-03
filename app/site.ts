@@ -5,7 +5,7 @@ export const SITE = {
   koreanName: "부달주소 관찰노트",
   url: "https://budal.yuheungpick.com",
   description:
-    "부달주소 최신 확인 가이드. 부산달리기 공개 채널의 주소 주장을 관찰하고, 밤의달인(bamdalin.com) 바로가기와 부산·경남 생활권·게시판 읽기 기준을 제공합니다.",
+    "부달주소 확인 방법과 최신 주소 가이드. 부산달리기 공개 채널의 주소 주장을 관찰·대조하는 기준, 부산·경남 생활권·게시판 읽기 방법, 그리고 밤의달인(bamdalin.com) 바로가기를 정리합니다.",
   keywords: [
     "부달주소",
     "부달 주소",
@@ -37,6 +37,20 @@ export function absoluteUrl(path = "/"): string {
   if (!path || path === "/") return SITE.url;
   const normalized = path.startsWith("/") ? path : `/${path}`;
   return `${SITE.url}${normalized}`;
+}
+
+export function breadcrumbSchema(
+  items: ReadonlyArray<{ name: string; path: string }>,
+) {
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    })),
+  };
 }
 
 export function pageMetadata(

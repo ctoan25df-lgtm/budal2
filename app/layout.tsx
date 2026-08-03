@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   applicationName: SITE.koreanName,
   title: {
-    default: "부달주소 | 부산달리기 최신 주소 확인 · bamdalin.com 바로가기",
+    default: "부달주소 확인 방법 | 부산달리기 최신 주소 가이드 · bamdalin.com",
     template: "%s | " + SITE.koreanName,
   },
   description: SITE.description,
@@ -21,13 +21,25 @@ export const metadata: Metadata = {
 
 const websiteSchema = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": SITE.url + "/#website",
-  url: SITE.url,
-  name: SITE.koreanName,
-  alternateName: SITE.name,
-  description: SITE.description,
-  inLanguage: "ko-KR",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": SITE.url + "/#website",
+      url: SITE.url,
+      name: SITE.koreanName,
+      alternateName: SITE.name,
+      description: SITE.description,
+      inLanguage: "ko-KR",
+      publisher: { "@id": SITE.url + "/#organization" },
+    },
+    {
+      "@type": "Organization",
+      "@id": SITE.url + "/#organization",
+      name: SITE.koreanName,
+      url: SITE.url,
+      email: SITE.email,
+    },
+  ],
 };
 
 export default function RootLayout({

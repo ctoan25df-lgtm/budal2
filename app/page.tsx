@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SITE, jsonLd, pageMetadata } from "./site";
 
 export const metadata: Metadata = pageMetadata(
-  "부달주소 | 부산달리기 최신 주소 확인 · bamdalin.com 바로가기",
+  "부달주소 확인 방법 | 부산달리기 최신 주소 가이드 · bamdalin.com",
   SITE.description,
   "/",
 );
@@ -41,6 +41,14 @@ const FAQ = [
     q: "부산 전체로 검색하는 것과 생활권으로 나누는 것의 차이는 무엇인가요?",
     a: "부산·경남은 행정구역보다 환승축과 야간 귀가 수단이 실제 이동을 결정합니다. 서면·전포 중심권, 해운대·수영 동부권, 사상·김해 서부 연결권, 동래·양산 북부 연결권처럼 귀가 방향을 먼저 정하면 후보 범위가 현실적으로 줄어듭니다.",
   },
+  {
+    q: "부달주소 검색어와 실제 호스트가 다르면 어떻게 읽어야 하나요?",
+    a: "검색어·브랜드명·실제 호스트는 서로 다른 층위입니다. 결과 제목에 “부달주소”나 “부산달리기”가 있어도 주소창의 호스트가 기존에 쓰던 채널과 다르면, 제목만으로 같은 운영 주체라고 보지 않습니다. 표시 문구와 최종 호스트를 한 줄로 적어 두고, 공개 채널 두 곳 이상과 겹치는지 확인한 뒤에야 다음 단계로 넘어가세요.",
+  },
+  {
+    q: "Telegram 미리보기와 실제 접속 주소가 다를 때는요?",
+    a: "미리보기·단축 링크·중계 페이지는 표시 목적지와 최종 호스트가 다를 수 있습니다. 링크를 열기 전 표시 URL을 적고, 연 뒤 주소창의 실제 호스트·리다이렉트 단계를 따로 기록하세요. 미리보기 문구만으로 확정하지 말고, Linktree·사이트 공지와 같은 호스트를 가리키는지 교차 확인한 뒤 로그인·결제를 진행하는 편이 안전합니다.",
+  },
 ];
 
 export default function Home() {
@@ -49,7 +57,7 @@ export default function Home() {
     "@graph": [
       {
         "@type": "WebPage",
-        name: "부달주소 | 부산달리기 최신 주소 확인",
+        name: "부달주소 확인 방법 | 부산달리기 최신 주소 가이드",
         url: SITE.url,
         description: SITE.description,
         dateModified: SITE.reviewedAt,
@@ -85,9 +93,9 @@ export default function Home() {
               ISSUE 01 · PUBLIC CHANNEL REVIEW · {SITE.reviewedAt}
             </p>
             <h1>
-              부달주소,
+              부달주소 확인 가이드,
               <br />
-              <em>최신 주소는 bamdalin.com</em>
+              <em>최신 바로가기 bamdalin.com</em>
             </h1>
             <p>
               부달주소·부산달리기 검색에서 필요한 최신 연결은 밤의달인(
