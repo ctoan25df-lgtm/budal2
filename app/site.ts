@@ -3,9 +3,7 @@ import type { Metadata } from "next";
 export const SITE = {
   name: "BUDAL FIELDNOTE",
   koreanName: "부달주소 관찰노트",
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL ??
-    "https://budal-fieldnote-2026.brocpn.chatgpt.site",
+  url: "https://budal.yuheungpick.com",
   description:
     "부달주소 최신 확인 가이드. 부산달리기 공개 채널의 주소 주장을 관찰하고, 밤의달인(bamdalin.com) 바로가기와 부산·경남 생활권·게시판 읽기 기준을 제공합니다.",
   keywords: [
