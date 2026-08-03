@@ -32,12 +32,20 @@ export const ROUTES = [
   { href: "/editorial", label: "편집 기준" },
 ] as const;
 
+/** Canonical-safe absolute URL (no trailing slash; matches Next trailingSlash:false). */
+export function absoluteUrl(path = "/"): string {
+  if (!path || path === "/") return SITE.url;
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  return `${SITE.url}${normalized}`;
+}
+
 export function pageMetadata(
   title: string,
   description: string,
   path: string,
 ): Metadata {
-  const url = new URL(path, SITE.url).toString();
+  const url = absoluteUrl(path);
+  const ogImage = absoluteUrl("/og.png");
   return {
     title,
     description,
@@ -52,7 +60,7 @@ export function pageMetadata(
       description,
       images: [
         {
-          url: new URL("/og.png", SITE.url).toString(),
+          url: ogImage,
           width: 1200,
           height: 630,
           alt: "부달주소 관찰노트 · 부산달리기 주소 확인 · bamdalin.com 바로가기",
@@ -63,7 +71,7 @@ export function pageMetadata(
       card: "summary_large_image",
       title,
       description,
-      images: [new URL("/og.png", SITE.url).toString()],
+      images: [ogImage],
     },
   };
 }
