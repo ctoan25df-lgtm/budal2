@@ -18,8 +18,8 @@ const FAQ = [
     a: "일반적으로 부달은 부산달리기를 줄여 부르는 검색어로 쓰입니다. 다만 이름이 같다는 이유만으로 모든 주소와 채널의 운영 주체가 같다고 볼 수는 없습니다. 검색어·브랜드명·실제 호스트는 서로 다른 층위로 구분하는 편이 안전합니다.",
   },
   {
-    q: "밤의달인(bamdalin.com)은 부달 공식 주소인가요?",
-    a: "아닙니다. 이 노트는 부달 공개 채널 관찰·대조만 다루고, 밤의달인은 부산·경남 공개 목록을 보는 별도 플랫폼입니다. 채널 일치가 확인되기 전에는 어느 목록 링크로 부달 공식 주소를 대신하지 마세요.",
+    q: "밤의달인(밤달, bamdalin.com)은 부달 공식 주소인가요?",
+    a: "아닙니다. 이 노트는 부달 공개 채널 관찰·대조만 다루고, 밤의달인(밤달)은 부산·경남 공개 목록을 보는 별도 플랫폼입니다. 채널 일치가 확인되기 전에는 어느 목록 링크로 부달 공식 주소를 대신하지 마세요.",
   },
   {
     q: "Linktree나 Telegram에 나온 주소를 그대로 믿어도 되나요?",
@@ -119,7 +119,7 @@ export default function Home() {
                 rel="noopener noreferrer sponsored"
                 className="button line-button"
               >
-                밤의달인에서 부산·경남 보기
+                밤의달인(밤달)에서 부산·경남 보기
               </a>
             </div>
           </div>
@@ -131,12 +131,12 @@ export default function Home() {
             </div>
             <div className="review-card-body">
               <p>
-                부달주소 최신 연결은 밤의달인(<strong>bamdalin.com</strong>)
-                바로가기로 엽니다. 공개 채널 주장과 생활권 기준은 아래 노트에서
-                확인하세요.
+                부달주소 최신 연결은 밤의달인(밤달,{" "}
+                <strong>bamdalin.com</strong>) 바로가기로 엽니다. 공개 채널
+                주장과 생활권 기준은 아래 노트에서 확인하세요.
               </p>
               <ul>
-                <li>바로가기: bamdalin.com</li>
+                <li>바로가기: 밤의달인(밤달) · bamdalin.com</li>
                 <li>키워드: 부달주소 · 부산달리기</li>
                 <li>확인일: {SITE.reviewedAt}</li>
               </ul>
@@ -146,7 +146,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer sponsored"
             >
-              bamdalin.com 바로가기 →
+              밤의달인(밤달) 바로가기 →
             </a>
           </aside>
         </div>
@@ -348,10 +348,10 @@ export default function Home() {
       <section className="section wrap alternative-panel">
         <div>
           <p className="issue-label">SEPARATE PLATFORM</p>
-          <h2>밤의달인 바로가기</h2>
+          <h2>밤의달인(밤달) 바로가기</h2>
           <p>
-            부산·경남 정보는 밤의달인(<strong>bamdalin.com</strong>)에서 확인할
-            수 있습니다.
+            부산·경남 정보는 밤의달인(밤달, <strong>bamdalin.com</strong>)에서
+            확인할 수 있습니다.
           </p>
         </div>
         <a

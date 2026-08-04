@@ -76,7 +76,7 @@ export function pageMetadata(
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: "부달주소 관찰노트 · 부산달리기 주소 확인 · bamdalin.com 바로가기",
+          alt: "부달주소 관찰노트 · 부산달리기 주소 확인 · 밤의달인(밤달) 바로가기",
         },
       ],
     },

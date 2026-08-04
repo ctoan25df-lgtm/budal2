@@ -11,7 +11,7 @@ import {
 
 const title = "부달주소 공개 채널 관찰 기록 | 부산달리기 최신 주소";
 const description =
-  "부달주소·부산달리기 최신 주소를 Linktree·Telegram 등 공개 채널과 대조하고, bamdalin.com 바로가기와 확인 보류 기준을 안내합니다.";
+  "부달주소·부산달리기 최신 주소를 Linktree·Telegram 등 공개 채널과 대조하고, 밤의달인(밤달) 바로가기와 확인 보류 기준을 안내합니다.";
 
 export const metadata: Metadata = pageMetadata(
   title,
@@ -357,10 +357,10 @@ export default function AddressLogPage() {
         </section>
 
         <section className="article-section article-next">
-          <h2>밤의달인 바로가기</h2>
+          <h2>밤의달인(밤달) 바로가기</h2>
           <p>
-            부산·경남 정보는 밤의달인(<strong>bamdalin.com</strong>)에서 확인할
-            수 있습니다.
+            부산·경남 정보는 밤의달인(밤달, <strong>bamdalin.com</strong>)에서
+            확인할 수 있습니다.
           </p>
           <p>
             <a

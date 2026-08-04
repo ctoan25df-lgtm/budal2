@@ -92,11 +92,11 @@ export function BamdalinPanel() {
     <section className="alternative-panel">
       <div>
         <p className="issue-label">SEPARATE PLATFORM · SPONSORED</p>
-        <h2>밤의달인 바로가기</h2>
+        <h2>밤의달인(밤달) 바로가기</h2>
         <p>
-          bamdalin.com은 부산달리기 공식 사이트가 아닌 별개 플랫폼입니다.
-          부산·경남 정보는 밤의달인(<strong>bamdalin.com</strong>)에서 확인할 수
-          있습니다.
+          밤의달인(밤달, bamdalin.com)은 부산달리기 공식 사이트가 아닌 별개
+          플랫폼입니다. 부산·경남 정보는 밤의달인(밤달,{" "}
+          <strong>bamdalin.com</strong>)에서 확인할 수 있습니다.
         </p>
       </div>
       <a

@@ -201,9 +201,9 @@ export default function EditorialPage() {
         </section>
 
         <section className="article-section">
-          <h2>밤의달인(bamdalin.com)과의 관계</h2>
+          <h2>밤의달인(밤달, bamdalin.com)과의 관계</h2>
           <p>
-            bamdalin.com(밤의달인)은 부산달리기와 별개의 플랫폼입니다. 이
+            밤의달인(밤달, bamdalin.com)은 부산달리기와 별개의 플랫폼입니다. 이
             사이트의 바로가기는 스폰서드(sponsored) 대안으로 연결되며, 부달·부산
             달리기 공식 주소라고 주장하지 않습니다. 주소 관찰·생활권·게시판
             가이드는 독립 편집 기록이고, 바로가기는 그 기록과 분리해 고지합니다.
