@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SITE, jsonLd, pageMetadata } from "./site";
 
 export const metadata: Metadata = pageMetadata(
-  "부달주소 확인 방법 | 부산달리기 최신 주소 가이드 · bamdalin.com",
+  "부달주소 공개채널 관찰노트 | Linktree·Telegram 대조",
   SITE.description,
   "/",
 );
@@ -19,7 +19,7 @@ const FAQ = [
   },
   {
     q: "밤의달인(bamdalin.com)은 부달 공식 주소인가요?",
-    a: "아닙니다. bamdalin.com은 부산달리기와 별개의 플랫폼입니다. 바로가기는 bamdalin.com으로 연결됩니다.",
+    a: "아닙니다. 이 노트는 부달 공개 채널 관찰·대조만 다루고, 밤의달인은 부산·경남 공개 목록을 보는 별도 플랫폼입니다. 채널 일치가 확인되기 전에는 어느 목록 링크로 부달 공식 주소를 대신하지 마세요.",
   },
   {
     q: "Linktree나 Telegram에 나온 주소를 그대로 믿어도 되나요?",
@@ -58,16 +58,16 @@ export default function Home() {
       {
         "@type": "WebPage",
         "@id": SITE.url + "/#webpage",
-        name: "부달주소 확인 방법 | 부산달리기 최신 주소 가이드",
+        name: "부달주소 공개채널 관찰노트 | Linktree·Telegram 대조",
         url: SITE.url,
         description: SITE.description,
         dateModified: SITE.reviewedAt,
         inLanguage: "ko-KR",
         isPartOf: { "@id": SITE.url + "/#website" },
         about: [
-          { "@type": "Thing", name: "부달주소" },
-          { "@type": "Thing", name: "부산달리기" },
-          { "@type": "Thing", name: "밤의달인" },
+          { "@type": "Thing", name: "부달주소 관찰" },
+          { "@type": "Thing", name: "부산달리기 공개채널" },
+          { "@type": "Thing", name: "Linktree Telegram 대조" },
         ],
         primaryImageOfPage: {
           "@type": "ImageObject",
@@ -99,28 +99,28 @@ export default function Home() {
               ISSUE 01 · PUBLIC CHANNEL REVIEW · {SITE.reviewedAt}
             </p>
             <h1>
-              부달주소 확인 가이드,
+              부달주소 공개채널
               <br />
-              <em>최신 바로가기 bamdalin.com</em>
+              <em>관찰노트</em>
             </h1>
             <p>
-              부달주소·부산달리기 검색에서 필요한 최신 연결은 밤의달인(
-              <strong>bamdalin.com</strong>) 바로가기로 엽니다. 이 사이트에서는
-              공개 채널 관찰 기록과 부산·경남 생활권·게시판 읽기 기준도 함께
+              Linktree·Telegram 등 공개 출처에 적힌 부달·부산달리기 주소 주장을
+              날짜별로 대조합니다. 채널이 서로 어긋나면 공식 호스트를 단정하지
+              않고 보류합니다. 부산·경남 생활권·게시판 읽기 기준도 같은 노트로
               정리합니다.
             </p>
             <div className="button-row">
+              <Link href="/address-log" className="button dark-button">
+                관찰 기록 보기
+              </Link>
               <a
                 href={SITE.alternativeUrl}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className="button dark-button"
+                className="button line-button"
               >
-                바로가기
+                밤의달인에서 부산·경남 보기
               </a>
-              <Link href="/address-log" className="button line-button">
-                부달주소 관찰 기록
-              </Link>
             </div>
           </div>
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   applicationName: SITE.koreanName,
   title: {
-    default: "부달주소 확인 방법 | 부산달리기 최신 주소 가이드 · bamdalin.com",
+    default: "부달주소 공개채널 관찰노트 | Linktree·Telegram 대조",
     template: "%s | " + SITE.koreanName,
   },
   description: SITE.description,
