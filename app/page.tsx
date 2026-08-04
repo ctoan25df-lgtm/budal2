@@ -57,20 +57,26 @@ export default function Home() {
     "@graph": [
       {
         "@type": "WebPage",
+        "@id": SITE.url + "/#webpage",
         name: "부달주소 확인 방법 | 부산달리기 최신 주소 가이드",
         url: SITE.url,
         description: SITE.description,
         dateModified: SITE.reviewedAt,
         inLanguage: "ko-KR",
-        keywords: SITE.keywords.join(", "),
+        isPartOf: { "@id": SITE.url + "/#website" },
         about: [
           { "@type": "Thing", name: "부달주소" },
           { "@type": "Thing", name: "부산달리기" },
           { "@type": "Thing", name: "밤의달인" },
         ],
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: SITE.url + "/og.png",
+        },
       },
       {
         "@type": "FAQPage",
+        "@id": SITE.url + "/#faq",
         mainEntity: FAQ.map((item) => ({
           "@type": "Question",
           name: item.q,

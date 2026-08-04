@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArticleHeader, Breadcrumb } from "../components/SiteChrome";
-import { SITE, jsonLd, pageMetadata } from "../site";
+import {
+  SITE,
+  absoluteUrl,
+  breadcrumbSchema,
+  jsonLd,
+  pageMetadata,
+} from "../site";
 
 const title = "부달 부산·경남 생활권 탐색 지도";
 const description =
@@ -50,13 +56,37 @@ const regions = [
 export default function RegionsPage() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: title,
-    description,
-    dateModified: SITE.reviewedAt,
-    inLanguage: "ko-KR",
-    mainEntityOfPage: new URL("/regions", SITE.url).toString(),
-    about: { "@type": "Place", name: "부산·경상남도 생활권" },
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": absoluteUrl("/regions") + "#webpage",
+        url: absoluteUrl("/regions"),
+        name: title,
+        description,
+        dateModified: SITE.reviewedAt,
+        inLanguage: "ko-KR",
+        isPartOf: { "@id": SITE.url + "/#website" },
+        about: { "@type": "Place", name: "부산·경상남도 생활권" },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl("/og.png"),
+        },
+      },
+      {
+        "@type": "ItemList",
+        name: "부산·경남 생활권",
+        itemListElement: regions.map((region, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: region.name,
+          description: region.note,
+        })),
+      },
+      breadcrumbSchema([
+        { name: "홈", path: "/" },
+        { name: "생활권", path: "/regions" },
+      ]),
+    ],
   };
 
   return (

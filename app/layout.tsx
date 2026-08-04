@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SiteFooter, SiteHeader } from "./components/SiteChrome";
-import { SITE, jsonLd } from "./site";
+import { SITE, absoluteUrl, jsonLd } from "./site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -36,8 +36,16 @@ const websiteSchema = {
       "@type": "Organization",
       "@id": SITE.url + "/#organization",
       name: SITE.koreanName,
+      alternateName: SITE.name,
       url: SITE.url,
       email: SITE.email,
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/og.png"),
+        width: 1200,
+        height: 630,
+      },
+      image: absoluteUrl("/og.png"),
     },
   ],
 };

@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArticleHeader, Breadcrumb } from "../components/SiteChrome";
-import { SITE, jsonLd, pageMetadata } from "../site";
+import {
+  SITE,
+  absoluteUrl,
+  breadcrumbSchema,
+  jsonLd,
+  pageMetadata,
+} from "../site";
 
 const title = "부달주소 공개 채널 관찰 기록 | 부산달리기 최신 주소";
 const description =
@@ -52,12 +58,47 @@ const FAQ = [
 export default function AddressLogPage() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: title,
-    description,
-    dateModified: SITE.reviewedAt,
-    inLanguage: "ko-KR",
-    mainEntityOfPage: new URL("/address-log", SITE.url).toString(),
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": absoluteUrl("/address-log") + "#webpage",
+        url: absoluteUrl("/address-log"),
+        name: title,
+        description,
+        dateModified: SITE.reviewedAt,
+        inLanguage: "ko-KR",
+        isPartOf: { "@id": SITE.url + "/#website" },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl("/og.png"),
+        },
+      },
+      {
+        "@type": "Article",
+        headline: title,
+        description,
+        dateModified: SITE.reviewedAt,
+        inLanguage: "ko-KR",
+        mainEntityOfPage: absoluteUrl("/address-log"),
+        url: absoluteUrl("/address-log"),
+        image: absoluteUrl("/og.png"),
+        author: { "@id": SITE.url + "/#organization" },
+        publisher: { "@id": SITE.url + "/#organization" },
+      },
+      breadcrumbSchema([
+        { name: "홈", path: "/" },
+        { name: "주소 관찰", path: "/address-log" },
+      ]),
+      {
+        "@type": "FAQPage",
+        "@id": absoluteUrl("/address-log") + "#faq",
+        mainEntity: FAQ.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: { "@type": "Answer", text: item.a },
+        })),
+      },
+    ],
   };
 
   return (

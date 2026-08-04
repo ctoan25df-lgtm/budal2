@@ -119,11 +119,10 @@ export default function BoardGuidePage() {
         inLanguage: "ko-KR",
         mainEntityOfPage: absoluteUrl("/board-guide"),
         url: absoluteUrl("/board-guide"),
-        author: {
-          "@type": "Organization",
-          name: SITE.koreanName,
-          url: SITE.url,
-        },
+        image: absoluteUrl("/og.png"),
+        author: { "@id": SITE.url + "/#organization" },
+        publisher: { "@id": SITE.url + "/#organization" },
+        isPartOf: { "@id": SITE.url + "/#website" },
       },
       breadcrumbSchema([
         { name: "홈", path: "/" },
@@ -131,6 +130,7 @@ export default function BoardGuidePage() {
       ]),
       {
         "@type": "FAQPage",
+        "@id": absoluteUrl("/board-guide") + "#faq",
         mainEntity: FAQ.map((item) => ({
           "@type": "Question",
           name: item.q,
