@@ -88,18 +88,24 @@ export function ArticleHeader({
 }
 
 export function BamdalinPanel({
-  regionSlug = "busan",
-  label = "밤의달인 부산 목록 보기",
+  regionSlug,
 }: {
   regionSlug?: string;
-  label?: string;
 } = {}) {
-  const href =
-    regionSlug === "gyeongnam"
-      ? SITE.gyeongnamListingUrl
-      : regionSlug === "busan"
-        ? SITE.alternativeUrl
-        : bamdalinRegionUrl(regionSlug);
+  const links =
+    regionSlug != null
+      ? [
+          {
+            href: bamdalinRegionUrl(regionSlug),
+            label: `밤의달인 ${regionSlug === "gyeongnam" ? "경남" : regionSlug === "ulsan" ? "울산" : regionSlug === "busan" ? "부산" : regionSlug} 목록 보기`,
+            primary: true,
+          },
+        ]
+      : [
+          { href: SITE.alternativeUrl, label: "부산 목록", primary: true },
+          { href: SITE.gyeongnamListingUrl, label: "경남 목록", primary: false },
+          { href: SITE.ulsanListingUrl, label: "울산 목록", primary: false },
+        ];
 
   return (
     <section className="alternative-panel">
@@ -108,18 +114,23 @@ export function BamdalinPanel({
         <h2>밤의달인(밤달) 지역 목록</h2>
         <p>
           밤의달인(밤달, bamdalin.com)은 부산달리기 공식 사이트가 아닌 별개
-          플랫폼입니다. 해당 지역 공개 목록은 밤의달인(밤달,{" "}
+          플랫폼입니다. 부산·경남·울산 공개 목록은 밤의달인(밤달,{" "}
           <strong>bamdalin.com</strong>)에서 확인할 수 있습니다.
         </p>
       </div>
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer sponsored"
-        className="button coral-button"
-      >
-        {label}
-      </a>
+      <div className="button-row">
+        {links.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className={`button ${link.primary ? "coral-button" : "line-button"}`}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
     </section>
   );
 }

@@ -276,7 +276,7 @@ export default function RegionsPage() {
               rel="noopener noreferrer sponsored nofollow"
               className="button coral-button"
             >
-              밤의달인 부산 목록 보기
+              부산 목록
             </a>
             <a
               href={SITE.gyeongnamListingUrl}
@@ -284,7 +284,15 @@ export default function RegionsPage() {
               rel="noopener noreferrer sponsored nofollow"
               className="button line-button"
             >
-              밤의달인 경남 목록 보기
+              경남 목록
+            </a>
+            <a
+              href={SITE.ulsanListingUrl}
+              target="_blank"
+              rel="noopener noreferrer sponsored nofollow"
+              className="button line-button"
+            >
+              울산 목록
             </a>
           </p>
         </section>

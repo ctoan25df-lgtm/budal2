@@ -14,8 +14,10 @@ test("홈이 부달주소 확인 가이드로 렌더링된다", async () => {
   const html = await response.text();
 
   assert.match(html, /부달주소 확인 방법|부달주소 확인 가이드/);
-  assert.match(html, /밤의달인 부산 목록/);
+  assert.match(html, /밤의달인\(밤달\) 지역 목록|부산 목록/);
   assert.match(html, /bamdalin\.com\/board\/region\/busan/);
+  assert.match(html, /bamdalin\.com\/board\/region\/gyeongnam/);
+  assert.match(html, /bamdalin\.com\/board\/region\/ulsan/);
   assert.match(html, /재확인 필요/);
   assert.match(html, /별개의 플랫폼/);
   assert.match(html, /rel="noopener noreferrer sponsored"/);

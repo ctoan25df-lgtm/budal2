@@ -22,6 +22,8 @@ export const SITE = {
     "https://bamdalin.com/board/region/busan?utm_source=budal2&utm_medium=referral&utm_campaign=budal_address",
   gyeongnamListingUrl:
     "https://bamdalin.com/board/region/gyeongnam?utm_source=budal2&utm_medium=referral&utm_campaign=budal_address",
+  ulsanListingUrl:
+    "https://bamdalin.com/board/region/ulsan?utm_source=budal2&utm_medium=referral&utm_campaign=budal_address",
   email: "desk@budalfieldnote.kr",
 } as const;
 

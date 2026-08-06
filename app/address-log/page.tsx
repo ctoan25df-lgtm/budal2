@@ -359,17 +359,34 @@ export default function AddressLogPage() {
         <section className="article-section article-next">
           <h2>밤의달인(밤달) 지역 목록</h2>
           <p>
-            부산 정보는 밤의달인(밤달, <strong>bamdalin.com</strong>) 부산
-            목록에서 확인할 수 있습니다.
+            부산·경남·울산 정보는 밤의달인(밤달,{" "}
+            <strong>bamdalin.com</strong>) 해당 지역 목록에서 확인할 수
+            있습니다.
           </p>
-          <p>
+          <p className="button-row">
             <a
               href={SITE.alternativeUrl}
               target="_blank"
               rel="noopener noreferrer sponsored nofollow"
               className="button coral-button"
             >
-              밤의달인 부산 목록 보기
+              부산 목록
+            </a>
+            <a
+              href={SITE.gyeongnamListingUrl}
+              target="_blank"
+              rel="noopener noreferrer sponsored nofollow"
+              className="button line-button"
+            >
+              경남 목록
+            </a>
+            <a
+              href={SITE.ulsanListingUrl}
+              target="_blank"
+              rel="noopener noreferrer sponsored nofollow"
+              className="button line-button"
+            >
+              울산 목록
             </a>
           </p>
         </section>

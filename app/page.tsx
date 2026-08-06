@@ -119,7 +119,23 @@ export default function Home() {
                 rel="noopener noreferrer sponsored"
                 className="button line-button"
               >
-                밤의달인 부산 목록 보기
+                부산 목록
+              </a>
+              <a
+                href={SITE.gyeongnamListingUrl}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="button line-button"
+              >
+                경남 목록
+              </a>
+              <a
+                href={SITE.ulsanListingUrl}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="button line-button"
+              >
+                울산 목록
               </a>
             </div>
           </div>
@@ -132,22 +148,26 @@ export default function Home() {
             <div className="review-card-body">
               <p>
                 부달주소 최신 연결은 밤의달인(밤달,{" "}
-                <strong>bamdalin.com</strong>) 부산 목록으로 엽니다. 공개 채널
-                주장과 생활권 기준은 아래 노트에서 확인하세요.
+                <strong>bamdalin.com</strong>) 부산·경남·울산 목록으로 엽니다.
+                공개 채널 주장과 생활권 기준은 아래 노트에서 확인하세요.
               </p>
               <ul>
-                <li>바로가기: 밤의달인 부산 목록</li>
+                <li>바로가기: 밤의달인 부산·경남·울산</li>
                 <li>키워드: 부달주소 · 부산달리기</li>
                 <li>확인일: {SITE.reviewedAt}</li>
               </ul>
             </div>
-            <a
-              href={SITE.alternativeUrl}
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-            >
-              밤의달인 부산 목록 보기 →
-            </a>
+            <div className="button-row">
+              <a href={SITE.alternativeUrl} target="_blank" rel="noopener noreferrer sponsored">
+                부산 →
+              </a>
+              <a href={SITE.gyeongnamListingUrl} target="_blank" rel="noopener noreferrer sponsored">
+                경남 →
+              </a>
+              <a href={SITE.ulsanListingUrl} target="_blank" rel="noopener noreferrer sponsored">
+                울산 →
+              </a>
+            </div>
           </aside>
         </div>
       </section>
@@ -350,26 +370,37 @@ export default function Home() {
           <p className="issue-label">SEPARATE PLATFORM</p>
           <h2>밤의달인(밤달) 지역 목록</h2>
           <p>
-            부산 정보는 밤의달인(밤달, <strong>bamdalin.com</strong>) 부산
-            목록에서 확인할 수 있습니다. 경남 생활권은{" "}
-            <a
-              href={SITE.gyeongnamListingUrl}
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-            >
-              경남 목록
-            </a>
-            으로 이어집니다.
+            부산·경남·울산 정보는 밤의달인(밤달,{" "}
+            <strong>bamdalin.com</strong>) 해당 지역 목록에서 확인할 수
+            있습니다.
           </p>
         </div>
-        <a
-          href={SITE.alternativeUrl}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          className="button coral-button"
-        >
-          밤의달인 부산 목록 보기
-        </a>
+        <div className="button-row">
+          <a
+            href={SITE.alternativeUrl}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="button coral-button"
+          >
+            부산 목록
+          </a>
+          <a
+            href={SITE.gyeongnamListingUrl}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="button line-button"
+          >
+            경남 목록
+          </a>
+          <a
+            href={SITE.ulsanListingUrl}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="button line-button"
+          >
+            울산 목록
+          </a>
+        </div>
       </section>
 
       <section className="section wrap faq-layout">
