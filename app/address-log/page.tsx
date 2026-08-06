@@ -357,10 +357,10 @@ export default function AddressLogPage() {
         </section>
 
         <section className="article-section article-next">
-          <h2>밤의달인(밤달) 바로가기</h2>
+          <h2>밤의달인(밤달) 지역 목록</h2>
           <p>
-            부산·경남 정보는 밤의달인(밤달, <strong>bamdalin.com</strong>)에서
-            확인할 수 있습니다.
+            부산 정보는 밤의달인(밤달, <strong>bamdalin.com</strong>) 부산
+            목록에서 확인할 수 있습니다.
           </p>
           <p>
             <a
@@ -369,7 +369,7 @@ export default function AddressLogPage() {
               rel="noopener noreferrer sponsored nofollow"
               className="button coral-button"
             >
-              바로가기
+              밤의달인 부산 목록 보기
             </a>
           </p>
         </section>

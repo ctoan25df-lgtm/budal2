@@ -119,7 +119,7 @@ export default function Home() {
                 rel="noopener noreferrer sponsored"
                 className="button line-button"
               >
-                밤의달인(밤달)에서 부산·경남 보기
+                밤의달인 부산 목록 보기
               </a>
             </div>
           </div>
@@ -132,11 +132,11 @@ export default function Home() {
             <div className="review-card-body">
               <p>
                 부달주소 최신 연결은 밤의달인(밤달,{" "}
-                <strong>bamdalin.com</strong>) 바로가기로 엽니다. 공개 채널
+                <strong>bamdalin.com</strong>) 부산 목록으로 엽니다. 공개 채널
                 주장과 생활권 기준은 아래 노트에서 확인하세요.
               </p>
               <ul>
-                <li>바로가기: 밤의달인(밤달) · bamdalin.com</li>
+                <li>바로가기: 밤의달인 부산 목록</li>
                 <li>키워드: 부달주소 · 부산달리기</li>
                 <li>확인일: {SITE.reviewedAt}</li>
               </ul>
@@ -146,7 +146,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer sponsored"
             >
-              밤의달인(밤달) 바로가기 →
+              밤의달인 부산 목록 보기 →
             </a>
           </aside>
         </div>
@@ -348,10 +348,18 @@ export default function Home() {
       <section className="section wrap alternative-panel">
         <div>
           <p className="issue-label">SEPARATE PLATFORM</p>
-          <h2>밤의달인(밤달) 바로가기</h2>
+          <h2>밤의달인(밤달) 지역 목록</h2>
           <p>
-            부산·경남 정보는 밤의달인(밤달, <strong>bamdalin.com</strong>)에서
-            확인할 수 있습니다.
+            부산 정보는 밤의달인(밤달, <strong>bamdalin.com</strong>) 부산
+            목록에서 확인할 수 있습니다. 경남 생활권은{" "}
+            <a
+              href={SITE.gyeongnamListingUrl}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+            >
+              경남 목록
+            </a>
+            으로 이어집니다.
           </p>
         </div>
         <a
@@ -360,7 +368,7 @@ export default function Home() {
           rel="noopener noreferrer sponsored"
           className="button coral-button"
         >
-          바로가기
+          밤의달인 부산 목록 보기
         </a>
       </section>
 

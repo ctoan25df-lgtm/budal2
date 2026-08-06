@@ -264,19 +264,27 @@ export default function RegionsPage() {
         </section>
 
         <section className="article-section article-next">
-          <h2>밤의달인(밤달) 바로가기</h2>
+          <h2>밤의달인(밤달) 지역 목록</h2>
           <p>
-            부산·경남 정보는 밤의달인(밤달, <strong>bamdalin.com</strong>)에서
-            확인할 수 있습니다.
+            생활권 기준을 정리했다면 밤의달인(밤달,{" "}
+            <strong>bamdalin.com</strong>)에서 같은 지역 공개 목록을 비교하세요.
           </p>
-          <p>
+          <p className="button-row">
             <a
               href={SITE.alternativeUrl}
               target="_blank"
               rel="noopener noreferrer sponsored nofollow"
               className="button coral-button"
             >
-              바로가기
+              밤의달인 부산 목록 보기
+            </a>
+            <a
+              href={SITE.gyeongnamListingUrl}
+              target="_blank"
+              rel="noopener noreferrer sponsored nofollow"
+              className="button line-button"
+            >
+              밤의달인 경남 목록 보기
             </a>
           </p>
         </section>

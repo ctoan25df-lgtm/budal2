@@ -19,9 +19,15 @@ export const SITE = {
   linktreeUrl: "https://linktr.ee/busandal",
   telegramUrl: "https://t.me/s/budalinfo",
   alternativeUrl:
-    "https://bamdalin.com/?utm_source=budal2&utm_medium=referral&utm_campaign=budal_address",
+    "https://bamdalin.com/board/region/busan?utm_source=budal2&utm_medium=referral&utm_campaign=budal_address",
+  gyeongnamListingUrl:
+    "https://bamdalin.com/board/region/gyeongnam?utm_source=budal2&utm_medium=referral&utm_campaign=budal_address",
   email: "desk@budalfieldnote.kr",
 } as const;
+
+export function bamdalinRegionUrl(slug: string) {
+  return `https://bamdalin.com/board/region/${slug}?utm_source=budal2&utm_medium=referral&utm_campaign=budal_address`;
+}
 
 export const ROUTES = [
   { href: "/", label: "홈" },

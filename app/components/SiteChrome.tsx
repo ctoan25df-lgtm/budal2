@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ROUTES, SITE } from "../site";
+import { ROUTES, SITE, bamdalinRegionUrl } from "../site";
 
 export function SiteHeader() {
   return (
@@ -87,25 +87,38 @@ export function ArticleHeader({
   );
 }
 
-export function BamdalinPanel() {
+export function BamdalinPanel({
+  regionSlug = "busan",
+  label = "밤의달인 부산 목록 보기",
+}: {
+  regionSlug?: string;
+  label?: string;
+} = {}) {
+  const href =
+    regionSlug === "gyeongnam"
+      ? SITE.gyeongnamListingUrl
+      : regionSlug === "busan"
+        ? SITE.alternativeUrl
+        : bamdalinRegionUrl(regionSlug);
+
   return (
     <section className="alternative-panel">
       <div>
         <p className="issue-label">SEPARATE PLATFORM · SPONSORED</p>
-        <h2>밤의달인(밤달) 바로가기</h2>
+        <h2>밤의달인(밤달) 지역 목록</h2>
         <p>
           밤의달인(밤달, bamdalin.com)은 부산달리기 공식 사이트가 아닌 별개
-          플랫폼입니다. 부산·경남 정보는 밤의달인(밤달,{" "}
+          플랫폼입니다. 해당 지역 공개 목록은 밤의달인(밤달,{" "}
           <strong>bamdalin.com</strong>)에서 확인할 수 있습니다.
         </p>
       </div>
       <a
-        href={SITE.alternativeUrl}
+        href={href}
         target="_blank"
         rel="noopener noreferrer sponsored"
         className="button coral-button"
       >
-        바로가기
+        {label}
       </a>
     </section>
   );
