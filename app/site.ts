@@ -5,19 +5,26 @@ export const SITE = {
   koreanName: "부달주소 관찰노트",
   url: "https://budal.yuheungpick.com",
   description:
-    "부달주소·부산달리기 공개 채널 관찰노트. Linktree·Telegram 등 공개 출처의 주소 주장을 날짜별로 대조하고, 일치하지 않으면 확정을 보류하는 기준과 부산·경남 생활권·게시판 읽기 방법을 정리합니다.",
+    "부달주소·부산달리기 주소 관찰노트. 밤의달인(밤달) 목록과 생활권 허브(norangbudal)·Telegram CS를 구분해 안내하고, 공개 출처가 어긋나면 확정을 보류하는 기준과 부산·경남 생활권·게시판 읽기 방법을 정리합니다.",
   keywords: [
     "부달주소",
     "부산달리기",
+    "부달 최신주소",
+    "부달 접속",
+    "부달 사칭",
     "부달 공개채널",
-    "부달 Linktree",
-    "부달 Telegram",
+    "밤달 Telegram",
+    "norangbudal",
     "부산달리기 주소 관찰",
   ],
-  reviewedAt: "2026-08-04",
+  reviewedAt: "2026-08-08",
   status: "재확인 필요",
-  linktreeUrl: "https://linktr.ee/busandal",
-  telegramUrl: "https://t.me/s/budalinfo",
+  /** 밤달 생활권·링크 허브 (daligi) — Linktree 역할 */
+  linktreeUrl: "https://norangbudal.com",
+  linktreeLabel: "생활권 허브",
+  telegramUrl: "https://t.me/bamdalincs",
+  telegramLabel: "밤달 CS",
+  geographyUrl: "https://norangbudal.com",
   alternativeUrl:
     "https://bamdalin.com/board/region/busan?utm_source=budal2&utm_medium=referral&utm_campaign=budal_address",
   gyeongnamListingUrl:
@@ -31,12 +38,28 @@ export function bamdalinRegionUrl(slug: string) {
   return `https://bamdalin.com/board/region/${slug}?utm_source=budal2&utm_medium=referral&utm_campaign=budal_address`;
 }
 
+/** Full route list for sitemap, footer, and hub cards. */
 export const ROUTES = [
   { href: "/", label: "홈" },
   { href: "/address-log", label: "주소 관찰" },
+  { href: "/access", label: "접속" },
+  { href: "/safety", label: "안전" },
+  { href: "/faq", label: "FAQ" },
   { href: "/regions", label: "생활권" },
+  { href: "/mobile", label: "모바일" },
+  { href: "/bookmark", label: "즐겨찾기" },
   { href: "/board-guide", label: "게시판 읽기" },
   { href: "/editorial", label: "편집 기준" },
+] as const;
+
+/** Primary nav (avoid overcrowding). Rest live in footer / hub cards. */
+export const NAV_ROUTES = [
+  { href: "/", label: "홈" },
+  { href: "/address-log", label: "주소 관찰" },
+  { href: "/access", label: "접속" },
+  { href: "/safety", label: "안전" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/regions", label: "생활권" },
 ] as const;
 
 /** Canonical-safe absolute URL (no trailing slash; matches Next trailingSlash:false). */

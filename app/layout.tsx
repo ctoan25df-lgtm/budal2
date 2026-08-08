@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   applicationName: SITE.koreanName,
   title: {
-    default: "부달주소 공개채널 관찰노트 | Linktree·Telegram 대조",
+    default: `부달주소 관찰노트 | 확인 ${SITE.reviewedAt}`,
     template: "%s | " + SITE.koreanName,
   },
   description: SITE.description,

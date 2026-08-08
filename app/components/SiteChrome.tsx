@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ROUTES, SITE, bamdalinRegionUrl } from "../site";
+import { NAV_ROUTES, ROUTES, SITE, bamdalinRegionUrl } from "../site";
 
 export function SiteHeader() {
   return (
@@ -13,7 +13,7 @@ export function SiteHeader() {
           </span>
         </Link>
         <nav className="desktop-nav" aria-label="주요 메뉴">
-          {ROUTES.slice(1).map((item) => (
+          {NAV_ROUTES.slice(1).map((item) => (
             <Link key={item.href} href={item.href}>
               {item.label}
             </Link>
@@ -21,7 +21,7 @@ export function SiteHeader() {
         </nav>
       </div>
       <nav className="mobile-nav" aria-label="모바일 주요 메뉴">
-        {ROUTES.map((item) => (
+        {NAV_ROUTES.map((item) => (
           <Link key={item.href} href={item.href}>
             {item.label}
           </Link>
@@ -84,6 +84,122 @@ export function ArticleHeader({
       <h1>{title}</h1>
       <p className="article-lead">{lead}</p>
     </header>
+  );
+}
+
+export function ChannelButtons({
+  includeBamdal = true,
+}: {
+  includeBamdal?: boolean;
+} = {}) {
+  return (
+    <div className="channel-stack">
+      {includeBamdal ? (
+        <div className="channel-primary">
+          <p className="channel-group-label">바로가기 · 밤의달인</p>
+          <a
+            href={SITE.alternativeUrl}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="button channel-button bamdal-button bamdal-button-featured"
+          >
+            <span className="channel-icon" aria-hidden="true">
+              ★
+            </span>
+            <span className="channel-copy">
+              <strong>밤달 부산 목록</strong>
+              <small>bamdalin.com · 별도 플랫폼</small>
+            </span>
+            <span className="channel-cta-arrow" aria-hidden="true">
+              →
+            </span>
+          </a>
+        </div>
+      ) : null}
+      <div className="channel-secondary">
+        <p className="channel-group-label">보조 채널 · 지리·문의</p>
+        <div className="button-row channel-buttons">
+          <a
+            href={SITE.linktreeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button channel-button linkhub-button"
+          >
+            <span className="channel-icon" aria-hidden="true">
+              ◈
+            </span>
+            <span className="channel-copy">
+              <strong>{SITE.linktreeLabel}</strong>
+              <small>norangbudal.com · 지리 안내</small>
+            </span>
+          </a>
+          <a
+            href={SITE.telegramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button channel-button telegram-button"
+          >
+            <span className="channel-icon" aria-hidden="true">
+              ✎
+            </span>
+            <span className="channel-copy">
+              <strong>{SITE.telegramLabel}</strong>
+              <small>@bamdalincs · 문의</small>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function ReviewStatusAside() {
+  return (
+    <aside className="verdict-box" aria-label="현재 검토 상태">
+      <div>
+        <span>REVIEW STATUS</span>
+        <strong>{SITE.status}</strong>
+      </div>
+      <p>
+        확인일 {SITE.reviewedAt}. 공개 표기가 어긋나면 단일 공식 호스트를
+        확정하지 않습니다. 지역 목록은 밤의달인(밤달)에서 확인하고, 지리·문의는
+        생활권 허브·Telegram CS를 쓰세요. 둘은 서로 다른 역할입니다.
+      </p>
+      <ChannelButtons />
+    </aside>
+  );
+}
+
+export function RelatedSpokes({
+  exclude,
+}: {
+  exclude?: ReadonlyArray<string>;
+} = {}) {
+  const spokes = [
+    { href: "/address-log", label: "주소 관찰" },
+    { href: "/access", label: "접속 점검" },
+    { href: "/mobile", label: "모바일" },
+    { href: "/bookmark", label: "즐겨찾기" },
+    { href: "/safety", label: "안전·사칭" },
+    { href: "/faq", label: "FAQ" },
+  ].filter((item) => !(exclude ?? []).includes(item.href));
+
+  return (
+    <section className="article-section">
+      <h2>이어서 읽을 노트</h2>
+      <ul className="boxed-list">
+        {spokes.map((item) => (
+          <li key={item.href}>
+            <Link href={item.href}>{item.label}</Link>
+          </li>
+        ))}
+        <li>
+          <a href={SITE.geographyUrl} target="_blank" rel="noopener noreferrer">
+            부산·경남 생활권 지리 (norangbudal.com)
+          </a>
+        </li>
+      </ul>
+    </section>
   );
 }
 

@@ -90,7 +90,8 @@ export default function EditorialPage() {
           <h2>운영 관계와 작성 주체</h2>
           <p>
             BUDAL FIELDNOTE는 부산달리기 운영 주체와 무관합니다. 공개 웹페이지,
-            Linktree, Telegram 등 이용자가 직접 열 수 있는 자료를 대조해 관찰
+            Linktree 역할의 생활권 허브(norangbudal), Telegram CS(@bamdalincs)
+            등 이용자가 직접 열 수 있는 자료를 대조해 관찰
             기록을 작성합니다. 개별 업소를 평가하거나 특정 주소의 소유권을
             인증하지 않습니다. 정정 요청은{" "}
             <a href={"mailto:" + SITE.email}>{SITE.email}</a>로 받습니다.
@@ -153,20 +154,20 @@ export default function EditorialPage() {
             <a
               href={SITE.linktreeUrl}
               target="_blank"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer"
             >
               <span>01</span>
-              <strong>Linktree @busandal</strong>
-              <small>공개 링크 채널</small>
+              <strong>생활권 허브 · norangbudal.com</strong>
+              <small>밤달 지리·링크 허브</small>
             </a>
             <a
               href={SITE.telegramUrl}
               target="_blank"
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer"
             >
               <span>02</span>
-              <strong>Telegram @budalinfo</strong>
-              <small>공개 게시 채널</small>
+              <strong>Telegram @bamdalincs</strong>
+              <small>밤의달인 CS</small>
             </a>
           </div>
         </section>
