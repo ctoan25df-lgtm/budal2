@@ -38,29 +38,22 @@ export function bamdalinRegionUrl(slug: string) {
   return `https://bamdalin.com/board/region/${slug}?utm_source=budal2&utm_medium=referral&utm_campaign=budal_address`;
 }
 
-/** Full route list for sitemap, footer, and hub cards. */
+/** Full route list — header, sitemap, footer. */
 export const ROUTES = [
   { href: "/", label: "홈" },
   { href: "/address-log", label: "주소 관찰" },
   { href: "/access", label: "접속" },
-  { href: "/safety", label: "안전" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/regions", label: "생활권" },
   { href: "/mobile", label: "모바일" },
   { href: "/bookmark", label: "즐겨찾기" },
-  { href: "/board-guide", label: "게시판 읽기" },
-  { href: "/editorial", label: "편집 기준" },
-] as const;
-
-/** Primary nav (avoid overcrowding). Rest live in footer / hub cards. */
-export const NAV_ROUTES = [
-  { href: "/", label: "홈" },
-  { href: "/address-log", label: "주소 관찰" },
-  { href: "/access", label: "접속" },
   { href: "/safety", label: "안전" },
   { href: "/faq", label: "FAQ" },
   { href: "/regions", label: "생활권" },
+  { href: "/board-guide", label: "게시판" },
+  { href: "/editorial", label: "편집" },
 ] as const;
+
+/** Header primary nav — all content pages. */
+export const NAV_ROUTES = ROUTES;
 
 /** Canonical-safe absolute URL (no trailing slash; matches Next trailingSlash:false). */
 export function absoluteUrl(path = "/"): string {

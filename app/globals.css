@@ -120,13 +120,18 @@ a {
 
 .desktop-nav {
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 18px;
+  max-width: min(780px, 72vw);
 }
 
 .desktop-nav a,
 .mobile-nav a {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .desktop-nav a:hover,
@@ -1097,13 +1102,20 @@ a {
 
   .mobile-nav {
     display: flex;
-    gap: 24px;
+    gap: 16px;
     padding: 0 22px 12px;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .mobile-nav a {
     flex: 0 0 auto;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .mobile-nav a:hover {
+    border-bottom-color: var(--coral);
   }
 
   .channel-secondary .channel-buttons {
