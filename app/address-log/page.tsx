@@ -11,7 +11,7 @@ import {
 
 const title = "부달주소 공개 채널 관찰 기록 | 부산달리기 최신 주소";
 const description =
-  "부달주소·부산달리기 최신 주소를 밤달 생활권 허브·Telegram CS와 대조하고, 밤의달인(밤달) 바로가기와 확인 보류 기준을 안내합니다.";
+  "부달주소·부산달리기 최신 주소를 생활권 허브·Telegram CS와 대조하고, 밤의달인(밤달) 바로가기와 확인 보류 기준을 안내합니다.";
 
 export const metadata: Metadata = pageMetadata(
   title,
@@ -21,7 +21,7 @@ export const metadata: Metadata = pageMetadata(
 
 const sources = [
   {
-    label: "밤달 생활권 허브 · norangbudal.com",
+    label: "생활권 허브 · norangbudal.com",
     url: SITE.linktreeUrl,
     observed: "부산·경남 생활권·이동축 안내 허브 (Linktree 역할)",
     status: "밤달 위성 · 공식 부달 주소 대행 아님",

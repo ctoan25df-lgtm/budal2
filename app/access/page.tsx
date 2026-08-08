@@ -24,7 +24,7 @@ export const metadata: Metadata = pageMetadata(title, description, "/access");
 const steps = [
   {
     name: "기존 공개 채널 공지 확인",
-    text: "검색으로 새 주소를 찾기 전에 밤달 생활권 허브·Telegram CS의 최근 안내를 먼저 확인합니다.",
+    text: "검색으로 새 주소를 찾기 전에 밤의달인(밤달) 목록과 생활권 허브·Telegram CS 안내를 구분해 확인합니다.",
   },
   {
     name: "표시 URL과 주소창 호스트 비교",

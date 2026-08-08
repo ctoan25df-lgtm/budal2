@@ -19,7 +19,7 @@ export const SITE = {
   ],
   reviewedAt: "2026-08-08",
   status: "재확인 필요",
-  /** 밤달 생활권·링크 허브 (daligi) — Linktree 역할 */
+  /** 생활권·링크 허브 (daligi) — 밤달 목록과 별개 */
   linktreeUrl: "https://norangbudal.com",
   linktreeLabel: "생활권 허브",
   telegramUrl: "https://t.me/bamdalincs",

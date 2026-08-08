@@ -28,7 +28,7 @@ export default function Home() {
         about: [
           { "@type": "Thing", name: "부달주소 관찰" },
           { "@type": "Thing", name: "부산달리기 공개채널" },
-          { "@type": "Thing", name: "밤달 생활권 허브" },
+          { "@type": "Thing", name: "생활권 허브" },
           { "@type": "Thing", name: "밤달 Telegram CS" },
         ],
         primaryImageOfPage: {
@@ -46,7 +46,7 @@ export default function Home() {
             "@type": "HowToStep",
             position: 1,
             name: "공개 채널 확인",
-            text: "밤달 생활권 허브·Telegram CS의 최근 안내와 표시 주소를 확인합니다.",
+            text: "밤의달인(밤달) 목록과 생활권 허브·Telegram CS의 최근 안내를 구분해 확인합니다.",
           },
           {
             "@type": "HowToStep",
@@ -92,12 +92,20 @@ export default function Home() {
               <em>관찰노트</em>
             </h1>
             <p>
-              밤달 생활권 허브(norangbudal)·Telegram CS(@bamdalincs)와 공개
+              밤의달인(밤달) 목록과 생활권 허브(norangbudal)·Telegram CS(@bamdalincs)를 구분해 안내하고, 공개
               출처에 적힌 부달·부산달리기 주소 주장을 날짜별로 대조합니다. 채널이
               서로 어긋나면 공식 호스트를 단정하지 않고 보류합니다. 접속·모바일·사칭
               점검은 아래 노트로 나눕니다.
             </p>
             <div className="button-row">
+              <a
+                href={SITE.alternativeUrl}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="button coral-button"
+              >
+                밤달 부산 목록
+              </a>
               <Link href="/address-log" className="button dark-button">
                 관찰 기록 보기
               </Link>
@@ -107,14 +115,6 @@ export default function Home() {
               <Link href="/safety" className="button line-button">
                 사칭 주의
               </Link>
-              <a
-                href={SITE.alternativeUrl}
-                target="_blank"
-                rel="noopener noreferrer sponsored"
-                className="button line-button"
-              >
-                부산 목록
-              </a>
             </div>
           </div>
 
@@ -165,7 +165,7 @@ export default function Home() {
           {[
             {
               title: "공개 채널 확인",
-              body: "밤달 생활권 허브·Telegram CS의 최근 안내와 표시 주소를 먼저 확인합니다.",
+              body: "밤의달인(밤달) 목록을 우선 보고, 생활권 허브·Telegram CS 안내는 보조로 확인합니다.",
             },
             {
               title: "호스트 대조",
@@ -323,7 +323,7 @@ export default function Home() {
           {[
             "기존에 이용하던 채널의 최근 공지와 표시 주소를 먼저 확인합니다.",
             "링크를 열기 전 미리보기·표시 목적지와, 연 뒤 주소창의 실제 호스트를 비교합니다.",
-            "밤달 생활권 허브·Telegram CS·사이트 안 안내가 같은 호스트를 가리키는지 봅니다.",
+            "밤의달인(밤달) 목록·생활권 허브·Telegram CS·사이트 안 안내가 같은 호스트를 가리키는지 구분해 봅니다.",
             "보안 경고, 예기치 않은 앱 설치 유도, 로그인·결제 요청이 보이면 입력을 중단합니다.",
             "일치하지 않으면 단일 공식 호스트를 확정하지 않고 “재확인 필요”로 둡니다.",
           ].map((step, index) => (

@@ -1106,6 +1106,10 @@ a {
     flex: 0 0 auto;
   }
 
+  .channel-secondary .channel-buttons {
+    grid-template-columns: 1fr;
+  }
+
   .hero-layout,
   .compact-intro,
   .alternative-panel,
